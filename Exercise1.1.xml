@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<library>
+    <catalog id="Technical">
+        <book ISBN="018749506339">
+            <author>Kissinger,Henry</author>
+            <title>The Age of A.I.</title>
+        </book>
+        <book ISBN="016521134567">
+            <author>Darrell,K. Rigby</author>
+            <title>Doing Agile Right: Transformation without Chaos</title>
+        </book>
+    </catalog>  
+    <catalog id="Cookery">
+        <book ISBN="026573542349">
+            <author>Oliver,Jamie</author>
+            <title>Jamie's 15 minute meals</title>
+        </book>
+        <book ISBN="016521134567">
+            <author>Lawson,Nigella</author>
+            <title>Cook,Eat,Repeat</title>
+        </book>
+</library>
