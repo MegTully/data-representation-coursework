@@ -14,7 +14,7 @@
         },
         {
             "Title": "Data representation course",
-            "Author": "Andrew Beatty",
+            "Author": "Megan Beatty",
             "ISBN": "1234556679",
             "Price": 10000099
         }
