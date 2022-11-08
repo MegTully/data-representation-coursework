@@ -3,6 +3,7 @@ import json
 from config import apiKey
 from github import Github
 
+
 # Api key stored in config file
 g = Github(apiKey)
 
@@ -11,32 +12,26 @@ repo = g.get_repo("MegTully/data-representation-coursework")
 #print url to repository to check it
 print(repo.clone_url)
 
-
-Contents = repo.get_contents("assignment03-cso.py")
+#I added a json file to my repo that had the name Andrew in it so that I could see if this prog worked
+#Contents is a variable that stores all the info from inside the Text.json file
+Contents = repo.get_contents("Text.json")
+#Create a variable to store the url to the contents inside .json file
 FileUrl = Contents.download_url
 print (FileUrl)
 
+#Our download URL is used to make a http request to the .json file 
 response = requests.get(FileUrl)
+#output the contents of the file
 contentOfFile = response.text
 print (contentOfFile)
 
+#Overwrite the contents in the file by changing any string with value andrew to a new string called Megan
+newContents = contentOfFile.replace("Andrew","Megan")
+print (newContents)
+
+#Update the file inside the github repo 
+gitHubResponse=repo.update_file(Contents.path,"Changed all instances of Andrew to Megan",
+newContents,Contents.sha)
+print (gitHubResponse)
 
 
-#filename= "Github_Repositories.json"
-
-
-#url = "https://api.github.com/repos/MegTully/data-representation-coursework/contents"
-
-#response = requests.get(url, auth = ('token', apiKey))
-#print(response.status_code)
-
-#repoJSON=response.json()
-
-#with open (filename, 'w') as fp:
-#    json.dump(repoJSON, fp , indent = 4)
-
-# replace all instances of 'r' (old) with 'e' (new)
-#new_string = string.replace("r", "e" )
- 
-#print(string)
-#print(new_string)
