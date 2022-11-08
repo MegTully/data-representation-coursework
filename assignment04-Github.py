@@ -3,7 +3,8 @@ import json
 from config import apiKey
 from github import Github
 
-
+#File to be edited as a variable so file can be changed 
+RepositoryFile = "Text.json"
 # Api key stored in config file
 g = Github(apiKey)
 
@@ -14,7 +15,7 @@ print(repo.clone_url)
 
 #I added a json file to my repo that had the name Andrew in it so that I could see if this prog worked
 #Contents is a variable that stores all the info from inside the Text.json file
-Contents = repo.get_contents("Text.json")
+Contents = repo.get_contents(RepositoryFile)
 #Create a variable to store the url to the contents inside .json file
 FileUrl = Contents.download_url
 print (FileUrl)
